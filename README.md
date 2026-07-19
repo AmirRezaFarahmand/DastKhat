@@ -27,8 +27,9 @@ DastNevis/
 ├── data/
 │   ├── images/
 │   └── metadata/
-├── scripts/
 ├── docs/
+├── scripts/
+├── LICENSE
 └── README.md
 ```
 
