@@ -6,9 +6,6 @@
 
 The dataset consists of handwritten Persian sentences collected from multiple participants. Each participant wrote a set of predefined Persian sentences, allowing the dataset to capture variation in handwriting styles, letter shapes, spacing, and writing patterns.
 
-> **This repository does not contain an AI model.**
-> It is the GitHub repository for the dataset project, its metadata, processing tools, and documentation.
-
 ---
 
 ## Dataset
@@ -173,52 +170,6 @@ The processing pipeline includes steps such as:
 
 ---
 
-## GitHub and Hugging Face
-
-The project is intentionally divided between two platforms:
-
-### GitHub
-
-Used for:
-
-* Dataset documentation
-* Metadata
-* Processing scripts
-* Data preparation tools
-* Project development
-
-### Hugging Face
-
-Used for:
-
-* Hosting the handwritten image data
-* Dataset distribution
-* Loading the dataset for machine learning workflows
-
-👉 **Download and access the dataset on Hugging Face:**
-
-https://huggingface.co/datasets/MrFarahmand/DastKhat
-
----
-
-## Loading the Dataset
-
-The dataset can be downloaded using the Hugging Face `datasets` library:
-
-```python
-from datasets import load_dataset
-
-dataset = load_dataset("MrFarahmand/DastKhat")
-```
-
-The exact dataset structure and available splits can be inspected with:
-
-```python
-print(dataset)
-```
-
----
-
 ## Project Status
 
 🚧 **Active Development**
@@ -271,7 +222,7 @@ Please see the repository license for information about using, modifying, and re
 
 ## Author
 
-Created and maintained by **Amir Reza Farahmand**.
+Created and maintained by **AmirReza Farahmand**.
 
 * GitHub: [AmirRezaFarahmand](https://github.com/AmirRezaFarahmand)
 * Hugging Face: [MrFarahmand](https://huggingface.co/MrFarahmand)
