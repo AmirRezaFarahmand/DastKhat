@@ -1,105 +1,244 @@
-# DastNevis
+# DastKhat
 
-**DastNevis** is an open dataset initiative for **Persian handwritten text recognition (HTR)**. The project aims to collect diverse handwritten Persian samples from contributors and build a high-quality dataset for research and development in OCR, HTR, and computer vision.
+## Persian Handwritten Text Dataset
 
-## 🎯 Goals
+**DastKhat** (دستخط, meaning *handwriting*) is an open Persian handwritten text dataset created for research and development in **Optical Character Recognition (OCR)**, **Handwritten Text Recognition (HTR)**, and related machine learning tasks.
 
-* Build a diverse dataset of handwritten Persian text.
-* Collect handwriting samples from people with different writing styles.
-* Provide structured metadata for each handwritten sample.
-* Support research and experimentation in Persian Handwritten Text Recognition.
-* Make Persian handwriting data more accessible to the machine learning community.
+The dataset consists of handwritten Persian sentences collected from multiple participants. Each participant wrote a set of predefined Persian sentences, allowing the dataset to capture variation in handwriting styles, letter shapes, spacing, and writing patterns.
 
-## 📊 Dataset
+> **This repository does not contain an AI model.**
+> It is the GitHub repository for the dataset project, its metadata, processing tools, and documentation.
 
-The dataset consists of handwritten Persian sentences collected from multiple contributors.
+---
 
-Each sample is associated with its original text and relevant metadata, allowing researchers to connect handwritten images with their corresponding transcriptions.
+## Dataset
 
-The dataset is currently under active development.
+The handwritten images are hosted on Hugging Face:
 
-## 🗂️ Dataset Structure
+### 🤗 DastKhat Dataset
 
-The repository is organized to separate the dataset components:
+**https://huggingface.co/datasets/MrFarahmand/DastKhat**
+
+The Hugging Face dataset contains the actual handwritten image samples.
+
+The GitHub repository intentionally does **not** contain the image files. This keeps the code repository lightweight and makes the dataset easier to distribute through a platform designed for large datasets.
+
+---
+
+## Repository Structure
 
 ```text
-DastNevis/
-├── data/
-│   ├── images/
-│   └── metadata/
-├── docs/
+DastKhat/
+│
+├── dataset/
+│   └── samples.csv
+│
 ├── scripts/
-├── LICENSE
-└── README.md
+│   ├── ...
+│   └── ...
+│
+├── README.md
+└── LICENSE
 ```
 
-The exact structure may evolve as the dataset grows.
+The exact structure may evolve as the dataset and processing pipeline develop.
 
-## 🧾 Metadata
+---
 
-Each handwritten sample is linked to a unique sentence identifier.
+## Dataset Metadata
 
-Example:
+The dataset metadata describes each handwritten sample.
+
+### `samples.csv`
+
+The sample metadata contains the following fields:
+
+| Column           | Description                                             |
+| ---------------- | ------------------------------------------------------- |
+| `sample_id`      | Unique identifier for the handwritten sample            |
+| `participant_id` | Identifier of the person who wrote the sample           |
+| `image_path`     | Path or reference to the corresponding image            |
+| `sentence_id`    | Identifier of the sentence                              |
+| `text`           | Ground-truth Persian transcription                      |
+| `split`          | Dataset split, such as training, validation, or testing |
+
+The image files corresponding to these samples are available through the Hugging Face dataset.
+
+---
+
+## Example Record
 
 ```csv
-sentence_id,text
-000001,این یک نمونه جمله فارسی است.
-000002,یادگیری ماشین یکی از شاخه‌های هوش مصنوعی است.
+sample_id,participant_id,image_path,sentence_id,text,split
+000001,participant_001,participant_001/000001.png,000001,متن نمونه فارسی,train
 ```
 
-The metadata allows each handwritten image to be matched with its ground-truth transcription.
+The actual dataset contains handwritten Persian samples collected from multiple participants.
 
-## ✍️ Data Collection
+---
 
-DastNevis uses a contributor-based data collection process. Contributors are provided with Persian sentences and write them by hand.
+## Dataset Design
 
-This approach allows the dataset to capture natural variation in:
+DastKhat is designed around **writer diversity**.
 
-* Handwriting styles
+Different participants naturally produce different:
+
 * Letter shapes
+* Writing styles
+* Character connections
 * Word spacing
-* Writing speed
-* Pen and paper characteristics
-* Individual writing habits
+* Writing sizes
+* Slants and angles
+* Pen pressure patterns
+* Individual handwriting characteristics
 
-This diversity is essential for developing models that can generalize beyond a single person's handwriting.
+This makes the dataset useful for studying the challenges involved in recognizing real Persian handwriting.
 
-## 🤖 Intended Applications
+---
 
-The dataset is intended for research and experimentation in areas such as:
+## Potential Applications
 
-* Persian Handwritten Text Recognition
-* Optical Character Recognition (OCR)
-* Computer Vision
+DastKhat can be used for research and experimentation in areas such as:
+
+* Persian Handwritten Text Recognition (HTR)
+* Persian Optical Character Recognition (OCR)
 * Deep Learning
-* Document Analysis
-* Persian Language Technology
+* Computer Vision
+* Document Image Analysis
+* Writer Identification
+* Handwriting Style Analysis
+* Data Augmentation
+* Self-Supervised Learning
+* Sequence Recognition
 
-## 🚧 Project Status
+The dataset is intended to provide a foundation for building and evaluating future Persian handwriting recognition systems.
 
-**Early Development**
+---
 
-DastNevis is currently in the data collection and dataset development phase. The dataset will continue to grow as more handwritten samples are collected and validated.
+## Data Collection
 
-## 🤝 Contributing
+The dataset was created by collecting handwritten samples from multiple participants.
+
+Each participant was provided with predefined Persian sentences and asked to write them by hand. The handwritten submissions were then processed and converted into individual image samples with corresponding metadata.
+
+The processing pipeline includes steps such as:
+
+1. Collecting handwritten submissions
+2. Extracting handwritten regions
+3. Cropping individual samples
+4. Associating samples with their ground-truth text
+5. Organizing metadata
+6. Preparing the dataset for machine learning applications
+
+---
+
+## GitHub and Hugging Face
+
+The project is intentionally divided between two platforms:
+
+### GitHub
+
+Used for:
+
+* Dataset documentation
+* Metadata
+* Processing scripts
+* Data preparation tools
+* Project development
+
+### Hugging Face
+
+Used for:
+
+* Hosting the handwritten image data
+* Dataset distribution
+* Loading the dataset for machine learning workflows
+
+👉 **Download and access the dataset on Hugging Face:**
+
+https://huggingface.co/datasets/MrFarahmand/DastKhat
+
+---
+
+## Loading the Dataset
+
+The dataset can be downloaded using the Hugging Face `datasets` library:
+
+```python
+from datasets import load_dataset
+
+dataset = load_dataset("MrFarahmand/DastKhat")
+```
+
+The exact dataset structure and available splits can be inspected with:
+
+```python
+print(dataset)
+```
+
+---
+
+## Project Status
+
+🚧 **Active Development**
+
+The dataset is still being expanded and improved.
+
+Future improvements may include:
+
+* More participants
+* More handwriting samples
+* Improved metadata
+* Additional dataset splits
+* Improved preprocessing
+* More detailed documentation
+* Benchmark models and baseline experiments
+
+---
+
+## Contributing
 
 Contributions are welcome.
 
-You can help by:
+Possible ways to contribute include:
 
-* Contributing handwritten samples
-* Improving data collection tools
-* Developing preprocessing and validation scripts
+* Contributing Persian handwritten samples
+* Improving data processing scripts
+* Finding and fixing dataset issues
 * Improving documentation
-* Building baseline HTR models
-* Reporting issues and suggesting improvements
+* Developing preprocessing tools
+* Creating baseline experiments
+* Reporting problems with the dataset
 
-## 📜 License
+If you would like to contribute handwritten data, please open an issue or contact the project maintainer.
 
-The dataset license will be specified as the project develops.
+---
 
-## 🌱 Vision
+## Citation
 
-The long-term goal of DastNevis is to create an open, diverse, and high-quality resource for Persian handwritten text recognition and help advance research in Persian language AI.
+If you use DastKhat in your research or project, please cite the dataset.
 
-**Every handwritten sentence contributes to teaching machines how humans write Persian.**
+A formal citation will be added as the dataset reaches a more stable release.
+
+---
+
+## License
+
+Please see the repository license for information about using, modifying, and redistributing the project and dataset.
+
+---
+
+## Author
+
+Created and maintained by **Amir Reza Farahmand**.
+
+* GitHub: [AmirRezaFarahmand](https://github.com/AmirRezaFarahmand)
+* Hugging Face: [MrFarahmand](https://huggingface.co/MrFarahmand)
+
+---
+
+## Acknowledgements
+
+Special thanks to all participants who contributed their handwritten Persian samples to the creation of this dataset.
+
+Without their contributions, DastKhat would not exist.
