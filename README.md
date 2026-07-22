@@ -37,6 +37,7 @@ DastKhat/
 │   ├── ...
 │   └── ...
 │
+├── CONTRIBUTORS.md
 ├── README.md
 └── LICENSE
 ```
@@ -74,6 +75,42 @@ sample_id,participant_id,image_path,sentence_id,text,split
 ```
 
 The actual dataset contains handwritten Persian samples collected from multiple participants.
+
+---
+
+## Loading the Dataset
+
+You can load the dataset using the Hugging Face `datasets` library:
+
+```python
+from datasets import load_dataset
+
+dataset = load_dataset("MrFarahmand/DastKhat")
+```
+
+Inspect the dataset:
+
+```python
+print(dataset)
+```
+
+Access a sample:
+
+```python
+sample = dataset["train"][0]
+
+print(sample)
+```
+
+Depending on the dataset configuration, the image can be accessed from the `image` field:
+
+```python
+image = sample["image"]
+text = sample["text"]
+
+print(text)
+image.show()
+```
 
 ---
 
