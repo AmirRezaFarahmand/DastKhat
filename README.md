@@ -30,8 +30,12 @@ The GitHub repository intentionally does **not** contain the image files. This k
 ```text
 DastKhat/
 │
-├── dataset/
-│   └── samples.csv
+├── data/
+│   ├── samples.csv
+│   └── sentences.csv
+│
+├── docs/
+│   └── ...
 │
 ├── scripts/
 │   ├── ...
