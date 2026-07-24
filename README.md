@@ -107,7 +107,7 @@ sample = dataset["train"][0]
 print(sample)
 ```
 
-Depending on the dataset configuration, the image can be accessed from the `image` field:
+the image can be accessed from the `image` field:
 
 ```python
 image = sample["image"]
