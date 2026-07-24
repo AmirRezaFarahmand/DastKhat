@@ -83,6 +83,10 @@ The actual dataset contains handwritten Persian samples collected from multiple 
 
 You can load the dataset using the Hugging Face `datasets` library:
 
+```bash
+python -m pip install datasets
+```
+
 ```python
 from datasets import load_dataset
 
