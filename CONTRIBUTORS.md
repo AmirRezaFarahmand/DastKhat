@@ -8,3 +8,4 @@ These contributors provided Persian handwriting samples for this project:
 - [Milad Farahmand](https://Behance.net/theladfa)
 - [Misaq Farahmand]()
 - [Reyhaneh Farahmand]()
+- [Iliya Mofarrah]()
