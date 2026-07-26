@@ -6,6 +6,8 @@
 
 The dataset consists of handwritten Persian sentences collected from multiple participants. Each participant wrote a set of predefined Persian sentences, allowing the dataset to capture variation in handwriting styles, letter shapes, spacing, and writing patterns.
 
+checkout our [website](https://www.alacrity.ir/) for more information on contributing to the project.
+
 ---
 
 ## Dataset
