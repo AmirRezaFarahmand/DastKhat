@@ -206,7 +206,7 @@ Possible ways to contribute include:
 * Creating baseline experiments
 * Reporting problems with the dataset
 
-If you would like to contribute handwritten data, please open an issue or contact the project maintainer.
+If you would like to contribute handwritten data, please visit our [website](https://www.alacrity.ir/)
 
 ---
 
