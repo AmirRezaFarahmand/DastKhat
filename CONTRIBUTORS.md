@@ -9,3 +9,4 @@ These contributors provided Persian handwriting samples for this project:
 - [Misaq Farahmand]()
 - [Reyhaneh Farahmand]()
 - [Iliya Mofarrah](https://www.instagram.com/iliya.mofarrah)
+- [Mahdiar Salmanian]()
