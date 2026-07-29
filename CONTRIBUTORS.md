@@ -11,3 +11,4 @@ These contributors provided Persian handwriting samples for this project:
 - [Iliya Mofarrah](https://www.instagram.com/iliya.mofarrah)
 - [Mahdiar Salmanian]()
 - [Amirsadra Chaghamirza](https://www.linkedin.com/in/amirsadra-chaghamirza-42764722b/)
+- [Alireza Akbari]()
