@@ -1,5 +1,10 @@
 # DastKhat (دستخط)
 
+[![License](https://img.shields.io/github/license/AmirRezaFarahmand/DastKhat)](LICENSE)
+[![Hugging Face Dataset](https://img.shields.io/badge/HuggingFace-Dataset-yellow?logo=huggingface)](https://huggingface.co/datasets/MrFarahmand/DastKhat)
+[![GitHub stars](https://img.shields.io/github/stars/AmirRezaFarahmand/DastKhat?style=social)](https://github.com/AmirRezaFarahmand/DastKhat)
+
+
 ## Persian Handwritten Text Dataset
 
 DastKhat is an open-source Persian handwritten text dataset created for **Optical Character Recognition (OCR)** and **Handwritten Text Recognition (HTR)** research.
