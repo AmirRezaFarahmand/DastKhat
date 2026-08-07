@@ -1,242 +1,304 @@
-# DastKhat
+# DastKhat (دستخط)
 
 ## Persian Handwritten Text Dataset
 
-**DastKhat** (دستخط, meaning *handwriting*) is an open Persian handwritten text dataset created for research and development in **Optical Character Recognition (OCR)**, **Handwritten Text Recognition (HTR)**, and related machine learning tasks.
+DastKhat is an open-source Persian handwritten text dataset created for **Optical Character Recognition (OCR)** and **Handwritten Text Recognition (HTR)** research.
 
-The dataset consists of handwritten Persian sentences collected from multiple participants. Each participant wrote a set of predefined Persian sentences, allowing the dataset to capture variation in handwriting styles, letter shapes, spacing, and writing patterns.
+The project focuses on collecting, processing, and publishing sentence-level handwritten Persian data to help researchers and developers build better Persian handwriting recognition systems.
 
-checkout our [website](https://www.alacrity.ir/) for more information on contributing to the project.
+The dataset contains handwritten Persian sentences collected from multiple contributors with different writing styles. Each handwritten sample is linked to its original Persian text annotation and metadata.
 
----
+The dataset is publicly available on Hugging Face:
 
-## Dataset
-
-The handwritten images are hosted on Hugging Face:
-
-### 🤗 DastKhat Dataset
-
-**https://huggingface.co/datasets/MrFarahmand/DastKhat**
-
-The Hugging Face dataset contains the actual handwritten image samples.
-
-The GitHub repository intentionally does **not** contain the image files. This keeps the code repository lightweight and makes the dataset easier to distribute through a platform designed for large datasets.
+https://huggingface.co/datasets/MrFarahmand/DastKhat
 
 ---
 
-## Repository Structure
+# Project Goals
 
-```text
+Persian handwriting recognition remains a challenging problem due to:
+
+- Limited publicly available Persian handwriting datasets
+- Large variation in handwriting styles
+- Complex Persian character forms and cursive writing
+- Lack of diverse writer-independent datasets
+
+DastKhat aims to provide an accessible resource for:
+
+- Persian OCR research
+- Handwritten Text Recognition models
+- Computer Vision experiments
+- Document understanding systems
+- Academic projects and competitions
+
+---
+
+# Dataset Overview
+
+| Metric | Value |
+|---|---:|
+| Writers | 8 |
+| Unique Sentences | 700 |
+| Handwritten Samples | 560 |
+| Language | Persian (فارسی) |
+| Annotation Level | Sentence |
+| Image Format | RGB |
+| License | MIT |
+| Current Version | v0.1 |
+
+---
+
+# Repository Structure
+
+```
 DastKhat/
-│
+
 ├── data/
 │   ├── samples.csv
 │   └── sentences.csv
 │
 ├── docs/
-│   └── ...
+│   └── Project documentation
 │
 ├── scripts/
-│   ├── ...
-│   └── ...
+│   └── Data collection and processing tools
 │
 ├── CONTRIBUTORS.md
-├── README.md
-└── LICENSE
+├── LICENSE
+└── README.md
 ```
 
-The exact structure may evolve as the dataset and processing pipeline develop.
+---
+
+# Dataset Metadata
+
+The dataset metadata is stored inside the `data/` directory.
+
+## `sentences.csv`
+
+Contains the predefined Persian sentences used during data collection.
+
+| Field | Description |
+|---|---|
+| `sentence_id` | Unique identifier of the sentence |
+| `text` | Persian sentence content |
+
+Example:
+
+```csv
+sentence_id,text
+000001,امروز هوا بسیار خوب است.
+000002,یادگیری ماشین یکی از شاخه‌های هوش مصنوعی است.
+```
 
 ---
 
-## Dataset Metadata
+## `samples.csv`
 
-The dataset metadata describes each handwritten sample.
+Contains information about each handwritten sample.
 
-### `samples.csv`
+| Field | Description |
+|---|---|
+| `sample_id` | Unique identifier for handwritten sample |
+| `participant_id` | Identifier of contributor |
+| `image_path` | Path to handwritten image |
+| `sentence_id` | Related sentence identifier |
+| `text` | Ground truth transcription |
+| `split` | Dataset split |
 
-The sample metadata contains the following fields:
-
-| Column           | Description                                             |
-| ---------------- | ------------------------------------------------------- |
-| `sample_id`      | Unique identifier for the handwritten sample            |
-| `participant_id` | Identifier of the person who wrote the sample           |
-| `image_path`     | Path or reference to the corresponding image            |
-| `sentence_id`    | Identifier of the sentence                              |
-| `text`           | Ground-truth Persian transcription                      |
-| `split`          | Dataset split, such as training, validation, or testing |
-
-The image files corresponding to these samples are available through the Hugging Face dataset.
-
----
-
-## Example Record
+Example:
 
 ```csv
 sample_id,participant_id,image_path,sentence_id,text,split
-000001,participant_001,participant_001/000001.png,000001,متن نمونه فارسی,train
+000001,P001,images/P001/000001.png,000001,امروز هوا بسیار خوب است.,train
 ```
-
-The actual dataset contains handwritten Persian samples collected from multiple participants.
 
 ---
 
-## Loading the Dataset
+# Data Collection Pipeline
 
-You can load the dataset using the Hugging Face `datasets` library:
+The dataset is created through the following workflow:
+
+```
+Sentence Generation
+        |
+        v
+Handwriting Sheet Creation
+        |
+        v
+Participant Writing
+        |
+        v
+Scanning / Image Collection
+        |
+        v
+Handwritten Region Detection
+        |
+        v
+Sentence Image Cropping
+        |
+        v
+Metadata Generation
+        |
+        v
+Dataset Release
+```
+
+---
+
+# Contributing
+
+DastKhat is an open-source project and contributions are welcome.
+
+There are several ways to contribute:
+
+## Handwriting Contribution
+
+Participants can contribute handwritten Persian samples through:
+
+https://www.alacrity.ir
+
+Contributors will be acknowledged in future dataset releases and publications.
+
+---
+
+## Code Contribution
+
+Developers can contribute by:
+
+- Improving preprocessing scripts
+- Adding data validation tools
+- Improving documentation
+- Creating visualization tools
+- Developing training pipelines
+- Reporting bugs and suggesting improvements
+
+Before contributing, please read:
+
+```
+CONTRIBUTORS.md
+```
+
+---
+
+# Development Setup
+
+Clone the repository:
 
 ```bash
-python -m pip install datasets
+git clone https://github.com/AmirRezaFarahmand/DastKhat.git
+
+cd DastKhat
 ```
 
-```python
-from datasets import load_dataset
+Install required dependencies:
 
-dataset = load_dataset("MrFarahmand/DastKhat")
+```bash
+pip install -r requirements.txt
 ```
 
-Inspect the dataset:
+*(Dependency setup will be added as the processing pipeline evolves.)*
 
-```python
-print(dataset)
+---
+
+# Data Processing Scripts
+
+The `scripts/` directory contains utilities used for:
+
+- Dataset generation
+- Image preprocessing
+- Metadata creation
+- Validation
+- Dataset maintenance
+
+Each script contains its own documentation and usage instructions.
+
+---
+
+# Usage
+
+DastKhat can be used for:
+
+- Persian OCR systems
+- Handwritten text recognition models
+- CNN/Transformer-based vision models
+- Document AI research
+- Writer identification experiments
+- Handwriting style analysis
+
+Recommended evaluation metrics:
+
+- Character Error Rate (CER)
+- Word Error Rate (WER)
+- Sequence Accuracy
+
+---
+
+# Dataset Versions
+
+## v0.1
+
+Initial public release.
+
+Included:
+
+- 8 writers
+- 560 handwritten samples
+- 700 predefined sentences
+
+---
+
+## Future Plans
+
+Planned improvements:
+
+- Increase number of contributors
+- Expand handwriting styles
+- Improve dataset validation
+- Add more benchmark experiments
+- Release training baselines
+
+---
+
+# Citation
+
+If you use DastKhat in your research, please cite:
+
+```bibtex
+@dataset{farahmandfar2026dastkhat,
+  author = {Farahmandfar, AmirReza},
+  title = {DastKhat: A Persian Handwritten Text Dataset},
+  year = {2026},
+  publisher = {Hugging Face},
+  url = {https://huggingface.co/datasets/MrFarahmand/DastKhat}
+}
 ```
 
-Access a sample:
+---
 
-```python
-sample = dataset["train"][0]
+# License
 
-print(sample)
+This project is released under the MIT License.
+
+See:
+
+```
+LICENSE
 ```
 
-the image can be accessed from the `image` field:
-
-```python
-image = sample["image"]
-text = sample["text"]
-
-print(text)
-image.show()
-```
+for more information.
 
 ---
 
-## Dataset Design
+# Acknowledgements
 
-DastKhat is designed around **writer diversity**.
-
-Different participants naturally produce different:
-
-* Letter shapes
-* Writing styles
-* Character connections
-* Word spacing
-* Writing sizes
-* Slants and angles
-* Pen pressure patterns
-* Individual handwriting characteristics
-
-This makes the dataset useful for studying the challenges involved in recognizing real Persian handwriting.
+Special thanks to everyone who contributed their handwriting samples and helped make DastKhat possible.
 
 ---
 
-## Potential Applications
+# Maintainer
 
-DastKhat can be used for research and experimentation in areas such as:
+**AmirReza Farahmand**
 
-* Persian Handwritten Text Recognition (HTR)
-* Persian Optical Character Recognition (OCR)
-* Deep Learning
-* Computer Vision
-* Document Image Analysis
-* Writer Identification
-* Handwriting Style Analysis
-* Data Augmentation
-* Self-Supervised Learning
-* Sequence Recognition
-
-The dataset is intended to provide a foundation for building and evaluating future Persian handwriting recognition systems.
-
----
-
-## Data Collection
-
-The dataset was created by collecting handwritten samples from multiple participants.
-
-Each participant was provided with predefined Persian sentences and asked to write them by hand. The handwritten submissions were then processed and converted into individual image samples with corresponding metadata.
-
-The processing pipeline includes steps such as:
-
-1. Collecting handwritten submissions
-2. Extracting handwritten regions
-3. Cropping individual samples
-4. Associating samples with their ground-truth text
-5. Organizing metadata
-6. Preparing the dataset for machine learning applications
-
----
-
-## Project Status
-
-🚧 **Active Development**
-
-The dataset is still being expanded and improved.
-
-Future improvements may include:
-
-* More participants
-* More handwriting samples
-* Improved metadata
-* Additional dataset splits
-* Improved preprocessing
-* More detailed documentation
-* Benchmark models and baseline experiments
-
----
-
-## Contributing
-
-Contributions are welcome.
-
-Possible ways to contribute include:
-
-* Contributing Persian handwritten samples
-* Improving data processing scripts
-* Finding and fixing dataset issues
-* Improving documentation
-* Developing preprocessing tools
-* Creating baseline experiments
-* Reporting problems with the dataset
-
-If you would like to contribute handwritten data, please visit our [website](https://www.alacrity.ir/)
-
----
-
-## Citation
-
-If you use DastKhat in your research or project, please cite the dataset.
-
-A formal citation will be added as the dataset reaches a more stable release.
-
----
-
-## License
-
-Please see the repository license for information about using, modifying, and redistributing the project and dataset.
-
----
-
-## Author
-
-Created and maintained by **AmirReza Farahmand**.
-
-* GitHub: [AmirRezaFarahmand](https://github.com/AmirRezaFarahmand)
-* Hugging Face: [MrFarahmand](https://huggingface.co/MrFarahmand)
-
----
-
-## Acknowledgements
-
-Special thanks to all participants who contributed their handwritten Persian samples to the creation of this dataset.
-
-Without their contributions, DastKhat would not exist.
+- GitHub: https://github.com/AmirRezaFarahmand
+- Hugging Face: https://huggingface.co/MrFarahmand
