@@ -101,7 +101,6 @@ Contains information about each handwritten sample.
 |---|---|
 | `sample_id` | Unique identifier for handwritten sample |
 | `participant_id` | Identifier of contributor |
-| `image_path` | Path to handwritten image |
 | `sentence_id` | Related sentence identifier |
 | `text` | Ground truth transcription |
 | `split` | Dataset split |
@@ -109,8 +108,8 @@ Contains information about each handwritten sample.
 Example:
 
 ```csv
-sample_id,participant_id,image_path,sentence_id,text,split
-000001,P001,images/P001/000001.png,000001,امروز هوا بسیار خوب است.,train
+sample_id,participant_id,sentence_id,text,split
+000001,P001,000001,امروز هوا بسیار خوب است.,train
 ```
 
 ---
