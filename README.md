@@ -69,7 +69,6 @@ DastKhat/
 ├── scripts/
 │   └── Data collection and processing tools
 │
-├── CONTRIBUTORS.md
 ├── LICENSE
 └── README.md
 ```
@@ -177,12 +176,6 @@ Developers can contribute by:
 - Creating visualization tools
 - Developing training pipelines
 - Reporting bugs and suggesting improvements
-
-Before contributing, please read:
-
-```
-CONTRIBUTORS.md
-```
 
 ---
 
