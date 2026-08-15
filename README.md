@@ -2,7 +2,10 @@
 
 [![License](https://img.shields.io/github/license/AmirRezaFarahmand/DastKhat)](LICENSE)
 [![Hugging Face Dataset](https://img.shields.io/badge/HuggingFace-Dataset-yellow?logo=huggingface)](https://huggingface.co/datasets/MrFarahmand/DastKhat)
-[![GitHub stars](https://img.shields.io/github/stars/AmirRezaFarahmand/DastKhat?style=social)](https://github.com/AmirRezaFarahmand/DastKhat)
+![Samples](https://img.shields.io/endpoint?url=https://amirrezafarahmand.github.io/DastKhat/badges/samples.json)
+![Writers](https://img.shields.io/endpoint?url=https://amirrezafarahmand.github.io/DastKhat/badges/writers.json)
+![Sentences](https://img.shields.io/endpoint?url=https://amirrezafarahmand.github.io/DastKhat/badges/sentences.json)
+
 
 DastKhat is an open-source Persian handwritten text dataset created for **Optical Character Recognition (OCR)** and **Handwritten Text Recognition (HTR)** research.
 
@@ -40,14 +43,11 @@ DastKhat aims to provide an accessible resource for:
 # Dataset Overview
 
 | Metric | Value |
-|---|---:|
-| Writers | ![Writers](https://img.shields.io/endpoint?url=https://amirrezafarahmand.github.io/DastKhat/badges/writers.json) |
-| Handwritten Samples | ![Samples](https://img.shields.io/endpoint?url=https://amirrezafarahmand.github.io/DastKhat/badges/samples.json) |
-| Unique Sentences | ![Sentences](https://img.shields.io/endpoint?url=https://amirrezafarahmand.github.io/DastKhat/badges/sentences.json) |
+|---|---|
 | Language | Persian (فارسی) |
 | Annotation Level | Sentence |
 | Image Format | RGB |
-| License | [![License](https://img.shields.io/github/license/AmirRezaFarahmand/DastKhat)](LICENSE) |
+| License | MIT |
 | Current Version | v0.1 |
 
 ---
@@ -56,7 +56,6 @@ DastKhat aims to provide an accessible resource for:
 
 ```
 DastKhat/
-
 ├── data/
 │   ├── samples.csv
 │   └── sentences.csv

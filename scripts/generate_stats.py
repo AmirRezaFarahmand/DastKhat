@@ -32,17 +32,17 @@ def create_badge(label: str, message: str, color: str):
 
 badges = {
     "writers.json": create_badge(
-        " ",
+        "writers",
         f"{writers_count:,}",
         "blue",
     ),
     "samples.json": create_badge(
-        " ",
+        "samples",
         f"{samples_count:,}",
         "green",
     ),
     "sentences.json": create_badge(
-        " ",
+        "sentences",
         f"{sentences_count:,}",
         "orange",
     ),
