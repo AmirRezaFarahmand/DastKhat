@@ -41,9 +41,9 @@ DastKhat aims to provide an accessible resource for:
 
 | Metric | Value |
 |---|---:|
-| Writers | 8 |
-| Unique Sentences | 700 |
-| Handwritten Samples | 560 |
+| Writers | ![Writers](https://img.shields.io/endpoint?url=https://amirrezafarahmand.github.io/DastKhat/badges/writers.json) |
+| Handwritten Samples | ![Samples](https://img.shields.io/endpoint?url=https://amirrezafarahmand.github.io/DastKhat/badges/samples.json) |
+| Unique Sentences | ![Sentences](https://img.shields.io/endpoint?url=https://amirrezafarahmand.github.io/DastKhat/badges/sentences.json) |
 | Language | Persian (فارسی) |
 | Annotation Level | Sentence |
 | Image Format | RGB |
