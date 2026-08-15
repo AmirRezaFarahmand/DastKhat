@@ -47,7 +47,7 @@ DastKhat aims to provide an accessible resource for:
 | Language | Persian (فارسی) |
 | Annotation Level | Sentence |
 | Image Format | RGB |
-| License | MIT |
+| License | [![License](https://img.shields.io/github/license/AmirRezaFarahmand/DastKhat)](LICENSE) |
 | Current Version | v0.1 |
 
 ---
