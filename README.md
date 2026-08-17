@@ -62,9 +62,7 @@ DastKhat/
 │
 ├── docs/
 │   ├── badges/
-│   │   ├── samples.json
-│   │   ├── sentences.json
-│   │   └── writers.json
+│   │   └── Badges linked to dataset statistics
 │   ├── images/
 │   │   └── preview.jpg
 │   └── Project documentation
@@ -163,7 +161,7 @@ There are several ways to contribute:
 
 Participants can contribute handwritten Persian samples through:
 
-https://www.alacrity.ir
+https://www.dastkhatproject.ir
 
 Contributors will be acknowledged in future dataset releases and publications.
 
