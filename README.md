@@ -61,6 +61,10 @@ DastKhat/
 │   └── sentences.csv
 │
 ├── docs/
+│   ├── badges/
+│   │   ├── samples.json
+│   │   ├── sentences.json
+│   │   └── writers.json
 │   ├── images/
 │   │   └── preview.jpg
 │   └── Project documentation
